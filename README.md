@@ -1,4 +1,4 @@
-# Wild Montana Flynt
+# Wild Montana Theme
 
 ## Description
 
