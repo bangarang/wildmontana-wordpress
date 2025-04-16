@@ -1,0 +1,54 @@
+<div class="flyntComponent donate" is="flynt-donate">
+  <div class="container">
+    <div class="justify-content-center">
+      <div class="col-md-8 donate-col">
+        <div class="row donate-wrapper">
+          <div class="col-md-4 icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="127.257" height="151" viewBox="0 0 127.257 151">
+              <g id="Group_480" data-name="Group 480" transform="translate(-111.523 -29.246)">
+                <path id="Path_19092" data-name="Path 19092" d="M200.033,101.356H165.675a2.837,2.837,0,0,1-2.725-2.092,230.9,230.9,0,0,0-13.724-37.749,2.81,2.81,0,0,1,.039-2.49l14.561-28.238a2.836,2.836,0,0,1,5.051.01l33.686,66.436A2.835,2.835,0,0,1,200.033,101.356Z" transform="translate(35.903 0)" fill="#fffefa"/>
+                <path id="Path_19093" data-name="Path 19093" d="M136.914,30.921,121.6,60.342a2.859,2.859,0,0,0,.813,3.572c9.9,7.821,18.1,20.485,22.807,35.324a2.83,2.83,0,0,0,2.69,2h31.255A2.852,2.852,0,0,0,181.9,97.6a210.965,210.965,0,0,0-12.049-32.34c-11.222-23.379-22.842-32.27-29.137-35.565A2.818,2.818,0,0,0,136.914,30.921Z" transform="translate(9.363 0.127)" fill="#fffefa"/>
+                <path id="Path_19094" data-name="Path 19094" d="M125.023,51.769,111.848,77.082a2.838,2.838,0,0,0,2.518,4.15H143.98a2.854,2.854,0,0,0,2.664-3.854c-4.042-10.868-10.084-20.14-17.211-26.435A2.851,2.851,0,0,0,125.023,51.769Z" transform="translate(0 20.13)" fill="#fffefa"/>
+                <path id="Path_19095" data-name="Path 19095" d="M114.366,69.512h34.358a2.837,2.837,0,0,1,2.725,2.092,230.9,230.9,0,0,0,13.724,37.749,2.81,2.81,0,0,1-.039,2.49l-14.561,28.238a2.835,2.835,0,0,1-5.051-.01L111.837,73.636A2.836,2.836,0,0,1,114.366,69.512Z" transform="translate(0 38.623)" fill="#fffefa"/>
+                <path id="Path_19096" data-name="Path 19096" d="M180.818,139.824,196.131,110.4a2.859,2.859,0,0,0-.813-3.572c-9.9-7.821-18.1-20.485-22.807-35.322a2.829,2.829,0,0,0-2.69-2H138.566a2.852,2.852,0,0,0-2.735,3.634,210.968,210.968,0,0,0,12.049,32.34c11.222,23.381,22.842,32.27,29.137,35.567A2.822,2.822,0,0,0,180.818,139.824Z" transform="translate(23.208 38.62)" fill="#fffefa"/>
+                <path id="Path_19097" data-name="Path 19097" d="M180.26,98.971l13.175-25.313a2.838,2.838,0,0,0-2.518-4.15H161.3a2.855,2.855,0,0,0-2.664,3.856C162.681,84.23,168.723,93.5,175.85,99.8A2.85,2.85,0,0,0,180.26,98.971Z" transform="translate(45.018 38.62)" fill="#fffefa"/>
+              </g>
+            </svg>
+          </div>
+          <div class="col-md-8">
+            <div class="content-wrapper">
+              <div class="content--{{textAlignment}}">
+                {% if headline %}<h3>{{ headline }}</h3>{% endif %}
+                <div class="preContent {{textAlignment}}">
+                  {{ content|e('wp_kses_post') }}
+                </div>
+                {% if donate_text %}<a href="{{ donate_link }}" class="button red_button">{{ donate_text }}</a>{% endif %}
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gradientOverlay"></div>
+        <div class="image-wrapper">
+          {% set gif = image.post_mime_type == 'image/gif' %}
+          <img class="figure-image {{ not gif ? 'lazyload' }}"
+               src="{{ not gif ? image.src|resizeDynamic(800) : image.src }}"
+            {% if not gif %}
+              srcset="{{ placeholderImage(800, 800 / image.aspect) }}"
+              data-srcset="
+            {{ image.src|resizeDynamic(1920) }} 1920w,
+            {{ image.src|resizeDynamic(1440) }} 1440w,
+            {{ image.src|resizeDynamic(1320) }} 1320w,
+            {{ image.src|resizeDynamic(1024) }} 1024w,
+            {{ image.src|resizeDynamic(800) }} 800w,
+            {{ image.src|resizeDynamic(600) }} 600w,
+            {{ image.src|resizeDynamic(375) }} 375w"
+              data-sizes="auto"
+            {% endif %}
+               alt="{{ image.alt|e }}">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

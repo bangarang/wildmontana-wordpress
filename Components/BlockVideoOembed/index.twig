@@ -1,0 +1,21 @@
+<div class="flyntComponent componentSpacing" is="flynt-block-video-oembed">
+  <div class="container">
+    {% if options.full_width %}
+      <div class="row video-row {{ options.theme }}">
+        <div class="col-md-12 video-col" style="padding-right: 0;">
+          {% include 'Partials/_video.twig' ignore missing with {video: video, image: posterImage} only %}
+        </div>
+      </div>
+    {% else %}
+      <div class="row video-row {{ options.theme }}">
+        <div class="col-md-8 video-col">
+          {% include 'Partials/_video.twig' ignore missing with {video: video, image: posterImage} only %}
+        </div>
+        <div class="col-md-4">
+          <h3 class="sans">{{ sideContent.headline }}</h3>
+          {{ sideContent.contentHtml|e('wp_kses_post') }}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>

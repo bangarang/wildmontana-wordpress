@@ -1,0 +1,22 @@
+.logo {
+  display: block;
+  flex-shrink: 0;
+  height: 100%;
+  z-index: 1000;
+
+  &-image {
+    height: 100%;
+    width: auto;
+  }
+  #Group_2 {
+    transition: 0.3s 0.3s ease;
+  }
+
+}
+
+&.flyntComponent-menuIsOpen .logo {
+  #Group_2 {
+    transform: translate(62.296px, 5.604px) translateX(-10px);
+    opacity: 0;
+  }
+}

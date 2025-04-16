@@ -1,0 +1,29 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  <article class="post">
+    <header class="post-header">
+      {{ renderComponent('BlockPostHeader', { post: post }) }}
+    </header>
+    <section class="post-main">
+      {% for component in post.meta('postComponents') %}
+        {{ renderComponent(component) }}
+      {% endfor %}
+    </section>
+    {% if post.meta('show_author') %}
+      <footer class="post-meta">
+        {{ renderComponent('BlockPostFooter', { post: post }) }}
+      </footer>
+    {% endif %}
+    <section class="post-related">
+      {% if post.meta('related_posts_category') %}
+        {{ renderComponent('GridPostsLatest', {'preContentHtml': '<h2>' ~ __('Related Posts') ~ '</h2>','taxonomies': post.meta('related_posts_category'), 'options': {'theme': 'themeDark', 'columns': 3}}) }}
+      {% else %}
+        {{ renderComponent('GridPostsLatest', {'preContentHtml': '<h2>' ~ __('Related Posts') ~ '</h2>','taxonomies': post.cagegories(), 'options': {'theme': 'themeDark', 'columns': 3}}) }}
+      {% endif %}
+    </section>
+    <section>
+      {{ renderComponent('BlockForm', {'contentHtml': '<h2>' ~ __('Stay Connected') ~ '</h2>','gravity_form_id': 1, 'options': {'theme': 'themeYellow', 'columns': 1}}) }}
+    </section>
+  </article>
+{% endblock %}

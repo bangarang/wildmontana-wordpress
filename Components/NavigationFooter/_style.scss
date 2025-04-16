@@ -1,0 +1,62 @@
+[is="flynt-navigation-footer"] {
+  font-size: 14px;
+  overflow: hidden;
+  padding: 50px 0;
+
+  .copyright-container {
+    padding-bottom: $component-spacing-mobile;
+    padding-top: $component-spacing-mobile;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+  }
+
+  .content {
+    @include reset-content-margins;
+    margin: 10px 0 0;
+
+    @media (min-width: $breakpoint-tablet) {
+      margin: 0;
+    }
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  .sub-menu-link {
+    color: $color-brand;
+    text-decoration: none;
+    transition: 0.3s ease;
+    &:hover, &:active, &:focus  {
+      color: $color-accent;
+    }
+  }
+
+  .footer-svg {
+    pointer-events: none;
+    position: absolute;
+    width: 800px;
+    transform: rotateZ(120deg);
+    right: -400px;
+    bottom: -175px;
+  }
+  .super-sub-menu-link {
+    text-decoration: none;
+    path {
+      transition: 0.25s ease;
+    }
+    &:hover {
+      path {
+        fill: #0e85a8;
+      }
+    }
+  }
+  @import "Partials/menu";
+  @media (max-width: $breakpoint-tablet) {
+    text-align: center;
+    .button {
+      min-width: 50%;
+    }
+  }
+}

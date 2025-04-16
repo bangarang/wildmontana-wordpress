@@ -1,0 +1,17 @@
+ {# <ul class="filter">
+  {% for term in terms %}
+    <li class="filter-item">
+      <a href="{{ term.link }}" class="filter-button button button--small {{ term.isActive ?: 'button--ghost' }}">
+        <span class="visuallyHidden">{{ __("Filter by", "flynt") }}</span>{{ term.title }}
+      </a>
+    </li>
+  {% endfor %}
+</ul> #}
+
+<select class="archive-select">
+  {% for term in terms %}
+    {% if (term.title != 'All') %}
+      <option value="{{ term.link }}" {% if (term.isActive) %}selected{% endif %}>{{ term.title }} </option>
+    {% endif %}
+  {% endfor %}
+</select>

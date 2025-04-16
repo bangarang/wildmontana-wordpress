@@ -1,0 +1,27 @@
+<div class="flyntComponent accordion {{ options.theme }} {{ options.style }}" is="flynt-accordion">
+  <div class="container">
+    {% if preContentHtml %}
+      <div class="preContent {{textAlignment}}">
+        {{ preContentHtml|e('wp_kses_post') }}
+      </div>
+    {% endif %}
+      <div class="accordion-container" data-showMultiple='{{showMultiple}}'>
+      {% for item in items %}
+        {% if item.title or item.contentHtml %}
+          <div class="ac">
+            {% if item.title %}
+              <h3 class="ac-header">
+                <button class="ac-trigger">{{ item.title }} </button>
+              </h3>
+            {% endif %}
+            {% if item.contentHtml %}
+              <div class="ac-panel">
+                {{ item.contentHtml|e('wp_kses_post') }}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+      </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+{% extends 'templates/_hike_document.twig' %}
+
+{% block content %}
+{#  <iframe src="http://127.0.0.1:9000/" frameborder="0" style="width: 100%; height: 100vh"></iframe>#}
+
+  <div class="flyntComponent flyntComponent-- themeLight " is="flynt-block-image">
+    <div class="backgroundImageContainer">
+      <div class="container">
+        <div class="content--textCenter">
+          <h1>Temp Top Section</h1></div>
+      </div>
+      <div class="gradientOverlay"></div>
+
+      <img class="figure-image lazyautosizes lazyloaded" src="https://wildmontana.org/wp-content/uploads/resized/2021/06/fox-kits-playing-rocky-mountain-front-edited-01-800x0-c-default.jpg" srcset="
+          https://wildmontana.org/wp-content/uploads/resized/2021/06/fox-kits-playing-rocky-mountain-front-edited-01-1920x0-c-default.jpg 1920w,
+          https://wildmontana.org/wp-content/uploads/resized/2021/06/fox-kits-playing-rocky-mountain-front-edited-01-1440x0-c-default.jpg 1440w,
+          https://wildmontana.org/wp-content/uploads/resized/2021/06/fox-kits-playing-rocky-mountain-front-edited-01-1320x0-c-default.jpg 1320w,
+          https://wildmontana.org/wp-content/uploads/resized/2021/06/fox-kits-playing-rocky-mountain-front-edited-01-1024x0-c-default.jpg 1024w,
+          https://wildmontana.org/wp-content/uploads/resized/2021/06/fox-kits-playing-rocky-mountain-front-edited-01-800x0-c-default.jpg 800w,
+          https://wildmontana.org/wp-content/uploads/resized/2021/06/fox-kits-playing-rocky-mountain-front-edited-01-600x0-c-default.jpg 600w,
+          https://wildmontana.org/wp-content/uploads/resized/2021/06/fox-kits-playing-rocky-mountain-front-edited-01-375x0-c-default.jpg 375w" data-srcset="
+          https://wildmontana.org/wp-content/uploads/resized/2021/06/fox-kits-playing-rocky-mountain-front-edited-01-1920x0-c-default.jpg 1920w,
+          https://wildmontana.org/wp-content/uploads/resized/2021/06/fox-kits-playing-rocky-mountain-front-edited-01-1440x0-c-default.jpg 1440w,
+          https://wildmontana.org/wp-content/uploads/resized/2021/06/fox-kits-playing-rocky-mountain-front-edited-01-1320x0-c-default.jpg 1320w,
+          https://wildmontana.org/wp-content/uploads/resized/2021/06/fox-kits-playing-rocky-mountain-front-edited-01-1024x0-c-default.jpg 1024w,
+          https://wildmontana.org/wp-content/uploads/resized/2021/06/fox-kits-playing-rocky-mountain-front-edited-01-800x0-c-default.jpg 800w,
+          https://wildmontana.org/wp-content/uploads/resized/2021/06/fox-kits-playing-rocky-mountain-front-edited-01-600x0-c-default.jpg 600w,
+          https://wildmontana.org/wp-content/uploads/resized/2021/06/fox-kits-playing-rocky-mountain-front-edited-01-375x0-c-default.jpg 375w" data-sizes="auto" alt="" sizes="1680px">
+    </div>
+  </div>
+
+  <div id="app"></div>
+  <script src="/wp-content/themes/wild-montana-flynt/hike/dist/manifest.9a7a2dee22bb681e136a.js" defer=""></script>
+  <script src="/wp-content/themes/wild-montana-flynt/hike/dist/0.2246f0cccc9e8db34101.js" defer=""></script>
+  <script src="/wp-content/themes/wild-montana-flynt/hike/dist/vendor.a3142dd21ebde0b05f7b.js" defer=""></script>
+  <script src="/wp-content/themes/wild-montana-flynt/hike/dist/app.980982a8a88b2306a39f.js" defer=""></script>
+
+  {% for component in post.meta('pageComponents') %}
+    {{ renderComponent(component) }}
+  {% endfor %}
+{% endblock %}

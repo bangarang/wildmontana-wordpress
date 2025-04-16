@@ -1,0 +1,47 @@
+[is='flynt-block-video-oembed'] {
+  @import 'Partials/video';
+  .video-row {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+  }
+  .video-col {
+    padding-left: 0;
+
+  }
+
+  h3 {
+    margin-top: 18px;
+  }
+
+  &.flyntComponent--sizeSmall {
+    .video {
+    }
+  }
+
+  &.flyntComponent--sizeMedium {
+    .video {
+    }
+  }
+
+  &.flyntComponent--sizeLarge {
+    .video {
+    }
+  }
+
+  &.flyntComponent--sizeFull {
+    .figure-caption {
+      margin-left: 0.625rem;
+    }
+  }
+
+  @media (max-width: $breakpoint-tablet-horizontal) {
+    .video-row {
+      margin: 0;
+    }
+    .video-col {
+      padding-right: 0;
+    }
+  }
+
+}

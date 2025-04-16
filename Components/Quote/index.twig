@@ -1,0 +1,57 @@
+<div class="flyntComponent {{ options.theme }} {{ options.card ? 'layoutCard' }}" is="flynt-component-quote">
+  <div class="container {{textAlignment}}">
+    {%  if options.slider %}
+      {% if options.quote_styling %}<div class="quoteIcon topQuote">“</div>{% endif %}
+        <div class="posts--slider" data-count="{{ options.columns }}">
+          <div data-slider class="slider swiper-container" data-autoplay="{{ options.autoplay }}" data-delay="{{ options.delay }}">
+            <div class="swiper-wrapper">
+              {% for item in items %}
+                <div class="slider-item swiper-slide post-slider-item">
+                  <div class="content">
+                    <div class="slider-panel">
+                      <div class="slider-panel-inner boxPadding">
+
+                        {% if item.contentHtml %}
+                              {% if item.contentHtml %}
+                                  {{ item.contentHtml|e('wp_kses_post') }}
+                              {% endif %}
+                        {% endif %}
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+            <div class="active--index">
+              {% for item in items %}
+                <div class="slider-dot dot-{{ loop.index - 1 }}" data-index="{{loop.index - 1}}"></div>
+              {% endfor %}
+            </div>
+            {# {% if options.quote_styling %}
+            <button type="button" data-slider-button="prev" class="slider-button slider-button--prev">
+              <i data-feather="arrow-left"></i>
+            </button>
+            <button type="button" data-slider-button="next" class="slider-button slider-button--next">
+              <i data-feather="arrow-right"></i>
+            </button>
+            {% endif %} #}
+          </div>
+        </div>
+      {% if options.quote_styling %}<div class="quoteIcon bottomQuote">”</div>{% endif %}
+    {%  else  %}
+      {% for item in items %}
+        {% if options.quote_styling %}<div class="quoteIcon topQuote">“</div>{% endif %}
+        {% if item.contentHtml %}
+          {% if item.contentHtml %}
+            <div class="content">
+              {{ item.contentHtml|e('wp_kses_post') }}
+            </div>
+          {% endif %}
+        {% endif %}
+        {% if options.quote_styling %}<div class="quoteIcon bottomQuote">”</div>{% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>

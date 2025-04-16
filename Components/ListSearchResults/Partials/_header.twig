@@ -1,0 +1,19 @@
+{# <div class="preContent"> #}
+{#  {{ preContentHtml|e('wp_kses_post') }}#}
+{# </div> #}
+{# <form class="searchForm" role="search" action="{{ bloginfo('url') }}"> #}
+<form class="searchForm" role="search" action="https://go.wildmontana.org/s/784453/BavzdujpbneDsUmoyYAIzaKD0pZK4N2y">
+  <h2>What are you looking for?</h2>
+  <div class="searchForm-field themeReset">
+    <div class="searchForm-box">
+      <label class="visuallyHidden" for="searchForm-input">{{ searchPlaceholder }}</label>
+      <svg xmlns="http://www.w3.org/2000/svg" width="23.248" height="22.652" viewBox="0 0 23.248 22.652">
+        <g id="Group_481" data-name="Group 481" transform="translate(-1.517 -2.761)">
+          <path id="Path_19117" data-name="Path 19117" d="M18.986,17.53c.911.862,1.814,1.715,2.715,2.569q1.236,1.171,2.468,2.347a1.682,1.682,0,1,1-2.3,2.447q-2.461-2.332-4.913-4.672a2.462,2.462,0,0,1-.228-.287,9.549,9.549,0,1,1,2.26-2.4ZM18.878,12.1a7.851,7.851,0,1,0-7.923,8.026A7.854,7.854,0,0,0,18.878,12.1Z" transform="translate(0 0)" fill="#454545"></path>
+        </g>
+      </svg>
+      <input name="s" id="searchForm-input" class="searchForm-input" type="search" required placeholder="Search" value="{{ searchQuery }}">
+    </div>
+    <button class="searchForm-submit button" type="submit">{{ labels.search }}</button>
+  </div>
+</form>

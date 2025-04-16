@@ -1,0 +1,14 @@
+<nav is="flynt-navigation-burger" class="flyntComponent" aria-label="{{ __("Main", "flynt") }}">
+  <div class="container centerMaxWidthContainer">
+    {% include 'Partials/_logo.twig' with { 'logo': logo, 'site': site } only %}
+    {% if menu %}
+      {% include 'Partials/_hamburger.twig' with { 'a11y': a11y } only %}
+    {% endif %}
+  </div>
+  
+  {% if menu %}
+    {% include 'Partials/_menu.twig' with { 'our_work': our_work, 'discover': discover, 'get_involved': get_involved, 'about': about, 'sub_menu': sub_menu  } only %}
+  {% endif %}
+
+
+</nav>

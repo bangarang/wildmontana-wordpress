@@ -1,0 +1,47 @@
+[is="flynt-block-form"] {
+  overflow: hidden;
+  position: relative;
+  .container {
+    position: relative;
+    z-index: 10;
+  }
+  .content {
+    @include reset-content-margins;
+    text-align: inherit;
+
+    &--textLeft {
+      text-align: left;
+    }
+
+    &--textCenter {
+      text-align: center;
+    }
+    > :last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  .nonCenterContentMaxWidth {
+    margin: unset !important;
+    max-width: 600px;
+  }
+
+  .topo-lines {
+    pointer-events: none;
+    position: absolute;
+    width: 800px;
+
+    &.gold-lines {
+      bottom: -100px;
+      left: -200px;
+      transform: rotate(77deg);
+      @media (max-width: 768px) {
+        transform: rotate(16deg);
+        left: unset;
+        right: -275px;
+        bottom: -200px;
+      }
+    }
+  }
+}

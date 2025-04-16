@@ -1,0 +1,66 @@
+.hamburger {
+  cursor: pointer;
+  display: block;
+  height: 18px;
+  position: relative;
+  width: 30px;
+  z-index: 1000;
+
+  &::before,
+  &::after {
+    content: '';
+  }
+
+  &::before,
+  &::after,
+  &-barPrimary,
+  &-barSecondary {
+    background-color: $color-brand;
+    display: block;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out,
+      background-color 0.3s ease-in-out;
+    width: 30px;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &-barPrimary,
+  &-barSecondary {
+    top: 8px;
+  }
+
+  &::after {
+    top: 16px;
+  }
+}
+
+&.flyntComponent-menuIsOpen .hamburger {
+  &::before,
+  &::after {
+    opacity: 0;
+  }
+
+  &::before {
+    transform: scale(0) translateY(8px);
+  }
+
+  &::after {
+    transform: scale(0) translateY(-8px);
+  }
+
+  &-barPrimary {
+    transform: rotate(45deg);
+    background-color: #fff;
+  }
+
+  &-barSecondary {
+    transform: rotate(-45deg);
+    background-color: #fff;
+  }
+
+}

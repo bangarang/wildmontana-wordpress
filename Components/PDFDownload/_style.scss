@@ -1,0 +1,43 @@
+
+[is='flynt-pdf-download'] {
+  .image-wrapper {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }
+  }
+  .content-wrapper {
+    background: $color-green;
+    padding: 30px;
+    border-radius: 12px;
+    color: #fff;
+    h3 {
+      color: #fff;
+    }
+    .preContent {
+      margin: 0 auto 32px;
+    }
+  }
+  @media (max-width: 768px) {
+    text-align: center;
+    .image-wrapper {
+      img {
+        display: table;
+        margin: auto;
+      }
+    }
+    .content-wrapper {
+      .h3, 
+      .content-title, .preContent {
+        text-align: center;
+      }
+    }
+  }
+}

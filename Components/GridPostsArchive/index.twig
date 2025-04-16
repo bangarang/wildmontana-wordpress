@@ -1,0 +1,77 @@
+
+<div class="flyntComponent componentSpacing {{ options.theme }}" is="flynt-grid-posts-archive">
+  <div class="container">
+    <div class="row">
+      <div class="col archives-col">
+        <h1>Archives</h1>
+        {% if terms %}
+          {% include 'Partials/_filter.twig' %}
+        {% endif %}
+      </div>
+      {% set html = isHome ? preContentHtml : description %}
+      {{ html|e('wp_kses_post') }}
+    </div>
+    <div class="row">
+      <div class="col">
+        <a href="/news-center" class="news-center-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30.895" height="10.723" viewBox="0 0 30.895 10.723">
+            <g id="Componente_3_51" data-name="Componente 3 – 51" transform="translate(1.5)">
+              <path id="Trazado_115" data-name="Trazado 115" d="M943,5328.771h19.892" transform="translate(-943 -5323.409)" fill="none" stroke="#9e4749" stroke-linecap="round" stroke-width="3"/>
+              <path id="Trazado_125" data-name="Trazado 125" d="M4.765.345a.689.689,0,0,1,1.194,0L10.63,8.47a.689.689,0,0,1-.6,1.032H.69a.689.689,0,0,1-.6-1.032Z" transform="translate(29.395 0) rotate(90)" fill="#9e4749"/>
+            </g>
+          </svg>
+          <span>Back to News Center</span>
+        </a>
+      </div>
+    </div>
+
+    <ul class="posts">
+      {% for post in posts %}
+        <li class="post">
+          <div class="meta">
+            {% if post.category %}
+              <a class="meta-category bold" href="{{ post.category.link|e('esc_url') }}"><span class="visuallyHidden">{{ __("Category:", "flynt") }}</span> {{ post.category }}</a>
+              <span class="divider">|</span>
+            {% endif %}
+            {% if post.date %}
+              <time class="meta-date" datetime="{{ post.post_date }}">{{ post.date|date }}</time>
+            {% endif %}
+          </div>
+          <a class="post-link" href="{{ post.link }}">
+            {% if post.thumbnail %}
+              <figure class="figure">
+                <img class="figure-image lazyload"
+                  src="{{ post.thumbnail.src|resizeDynamic(424, 283) }}"
+                  srcset="{{ placeholderImage(3, 2) }}"
+                  data-srcset="
+                    {{ post.thumbnail.src|resizeDynamic(1920, 1280) }} 1920w,
+                    {{ post.thumbnail.src|resizeDynamic(1320, 880) }} 1320w,
+                    {{ post.thumbnail.src|resizeDynamic(1280, 853) }} 1280w,
+                    {{ post.thumbnail.src|resizeDynamic(1050, 700) }} 1050w,
+                    {{ post.thumbnail.src|resizeDynamic(750, 500) }} 750w,
+                    {{ post.thumbnail.src|resizeDynamic(600, 400) }} 600w,
+                    {{ post.thumbnail.src|resizeDynamic(424, 283) }} 424w,
+                    {{ post.thumbnail.src|resizeDynamic(312, 208) }} 312w"
+                  data-sizes="auto"
+                  alt="{{ post.title }}">
+              </figure>
+            {% endif %}
+          </a>
+          <div class="post-inner">
+            <h2 class="h3 post-title">{{ post.title }}</h2>
+            <p class="post-excerpt">{{ post.preview.read_more(false) }}</p>
+            <a class="button button--link" href="{{ post.link }}" title="{{ post.title }}" aria-hidden="true" tabindex="-1">
+              {{ labels.readMore }}
+            </a>
+          </div>
+        </li>
+      {% else %}
+        <p class="posts-empty">{{ labels.noPostsFound }}</p>
+      {% endfor %}
+    </ul>
+    {% set pagination = posts.pagination %}
+    {% if pagination.pages %}
+      {% include 'Partials/_paginationButtons.twig' %}
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,136 @@
+[is="flynt-component-quote"] {
+  padding: 80px 0 60px;
+
+  .preContent {
+    &.textLeft {
+      text-align: left;
+      max-width: unset;
+    }
+    &.textRight {
+      text-align: left;
+      max-width: unset;
+    }
+  }
+
+  .grid {
+    @include reset-list;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: ($gutter-width * -1) 0 0 ($gutter-width * -1);
+
+    &--columns2,
+    &--columns3,
+    &--columns4 {
+      .grid-item {
+        @media (min-width: $breakpoint-tablet) {
+          width: 50%;
+        }
+      }
+    }
+
+    &--columns3 {
+      .grid-item {
+        @media (min-width: $breakpoint-tablet-horizontal) {
+          width: 33.33%;
+        }
+      }
+    }
+
+    &--columns4 {
+      .grid-item {
+        /* ensure 2 columns stacking up until $breakpoint-desktop */
+        max-width: (
+            $breakpoint-desktop - $container-padding-tablet * 2 + $gutter-width
+          ) / 3 + 1;
+
+        @media (min-width: $breakpoint-desktop) {
+          width: 25%;
+        }
+      }
+    }
+  }
+
+  .grid-item {
+    max-width: 675px;
+    padding: $gutter-width 0 0 $gutter-width;
+    width: 100%;
+  }
+
+  .content {
+    height: 100%;
+    margin-bottom: 60px;
+  }
+
+  .textCenter {
+    text-align: center;
+  }
+  .textLeft {
+    text-align: left;
+  }
+  .textRight {
+    text-align: right;
+  }
+
+  .quoteIcon {
+    color: $color-teal;
+    font-size: 100px;
+    font-weight: bold;
+    line-height: 1;
+    margin: 0;
+  }
+
+  .slider-button--prev,
+  .slider-button--next {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    z-index: 100;
+  }
+  .slider-button--prev {
+    left: 0;
+  }
+  .slider-button--next {
+    right: 0;
+  }
+
+  .active--index {
+    text-align: center;
+    .slider-dot {
+      display: inline-block;
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      border: 2px solid white;
+      transition: 0.25s ease-in-out;
+      margin-right: 5px;
+      &:hover {
+        background: white;
+      }
+    }
+
+    @for $i from 0 through 10 {
+      &.index--#{$i} .dot-#{$i} {
+        background: white;
+      }
+    }
+  }
+  &.themeLight {
+    .feather {
+      color: #fff;
+    }
+    .active--index {
+      .slider-dot {
+        border: 2px solid #143c48;
+        &:hover {
+          background: #143c48;
+        }
+      }
+      @for $i from 0 through 10 {
+        &.index--#{$i} .dot-#{$i} {
+          background: #143c48;
+        }
+      }
+    }
+  }
+}

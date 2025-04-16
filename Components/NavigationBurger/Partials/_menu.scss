@@ -1,0 +1,157 @@
+.menu,
+.burger-secondary-menu-expanded {
+  @include reset-list;
+  backface-visibility: hidden;
+  background-color: $color-background;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  overflow-y: auto;
+  padding-bottom: 30px;
+  padding-top: $navigation-height + 30px;
+  position: fixed;
+  top: 0;
+  transform: translateX(100%);
+  transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1), visibility 0.45s;
+  visibility: hidden;
+  width: 100%;
+  z-index: 98;
+
+  .admin-bar & {
+    top: 45px;
+
+    @media (min-width: 783px) {
+      top: 32px;
+    }
+  }
+
+  &-item--current {
+    .menu-link {
+      color: $color-accent;
+    }
+  }
+
+  &-link {
+    color: $color-text;
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 12px $container-padding-mobile;
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.2s ease-out;
+
+    &:focus {
+      color: $color-accent;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      padding-left: $container-padding-tablet;
+      padding-right: $container-padding-tablet;
+    }
+  }
+}
+
+.menu {
+  background: #143c48;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  height: unset;
+  .burger-menu-anchor {
+    display: block;
+    padding: 0 15px;
+    color: #fff;
+    text-decoration: none;
+
+    h4 {
+      color: #fff;
+      position: relative;
+      .arrow {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    &:hover {
+      color: #59c3da;
+      text-decoration: none;
+    }
+  }
+  .red_buttons {
+    padding: 15px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+
+    a {
+      display: block;
+      margin-bottom: 10px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+    }
+  }
+}
+
+.burger-secondary-menu-expanded {
+  padding-left: 0;
+  top: 0 !important;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  background: #0f282f;
+  overflow: scroll;
+  padding-top: 70px;
+  padding-bottom: 0;
+  .admin-bar & {
+    padding-top: 115px;
+
+    @media (min-width: 783px) {
+      padding-top: 102px;
+    }
+  }
+  .expanded-menu {
+    display: none;
+    position: relative;
+    height: 100%;
+    overflow: scroll;
+    padding: 15px;
+    .back-to-main {
+      color: #fff;
+    }
+    .menu-item a {
+      color: #5ec3d8;
+    }
+    .sub-menu-link {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+    .background-image-link {
+      margin: 25px 0;
+    }
+  }
+
+  &.menu-1 .expanded-menu-1,
+  &.menu-2 .expanded-menu-2,
+  &.menu-3 .expanded-menu-3,
+  &.menu-4 .expanded-menu-4 {
+    display: block;
+  }
+}
+
+&.flyntComponent-menuIsOpen .menu {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.burger-secondary-menu-expanded {
+  &.active {
+    transform: translateX(0);
+    visibility: visible;
+  }
+}

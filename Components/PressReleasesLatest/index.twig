@@ -1,0 +1,38 @@
+{% if items|length > 0 %}
+  <div class="flyntComponent flyntComponent--sizeFull {{ options.theme }}" is="press-releases-latest">
+    <div class="container topo-wrapper">
+      {% if preContentHtml %}
+        <div class="preContent textLeft">
+          {{ preContentHtml|e('wp_kses_post') }}
+        </div>
+      {% endif %}
+        <ul class="grid grid--columns{{ options.columns }}{% if options.slider %} sliderPosts{%  endif %}">
+          {% for item in items %}
+            <li class="grid-item">
+              <div class="content themeReset">
+                <a href="{% if item.external_link %}{{ item.link_url }}{% else %}{{ item.link }}{% endif %}" {% if item.external_link %}target="_blank" {% endif %} class="content-link" title="{{ item.title }}">
+                  <div class="content-inner">
+                    <h2 class="content-title">{{ item.title }}</h2>
+                    <p class="content-excerpt">{{ item.preview.read_more(false).length(18) }}</p>
+                    {% if item.source %}
+                      <p>Source: {{ item.source }}</p>
+                    {% endif %}
+                    <p class="meta"><span class="bold">News</span> | {{ item.post_date|date }}</p>
+                    <div class="learn-more-button">
+                      <span>Read More</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30.895" height="10.723" viewBox="0 0 30.895 10.723">
+                        <g id="Componente_3_51" data-name="Componente 3 – 51" transform="translate(1.5)">
+                          <path id="Trazado_115" data-name="Trazado 115" d="M943,5328.771h19.892" transform="translate(-943 -5323.409)" fill="none" stroke="#9e4749" stroke-linecap="round" stroke-width="3"></path>
+                          <path id="Trazado_125" data-name="Trazado 125" d="M4.765.345a.689.689,0,0,1,1.194,0L10.63,8.47a.689.689,0,0,1-.6,1.032H.69a.689.689,0,0,1-.6-1.032Z" transform="translate(29.395 0) rotate(90)" fill="#9e4749"></path>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,45 @@
+[is="flynt-sponsor-grid"] {
+  padding: 24px 0;
+
+  .preContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    &.textLeft {
+      text-align: left;
+      max-width: unset;
+    }
+    &.textRight {
+      text-align: left;
+      max-width: unset;
+    }
+  }
+
+  .grid {
+    @include reset-list;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+  }
+
+  .grid-item {
+    max-width: 150px;
+    padding: 0;
+    margin-right: 15px;
+    img {
+      border-radius: 0;
+    }
+    a {
+      transition: 0.25s ease;
+      opacity: 0.7;
+      display: block;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

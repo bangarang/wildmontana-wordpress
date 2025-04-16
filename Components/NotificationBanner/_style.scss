@@ -1,0 +1,91 @@
+
+[is='flynt-notification-banner'] {
+  padding: 20px 0;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .learn-more-button {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 9px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #143c48;
+    transition: 0.25s ease;
+
+    span {
+      text-transform: uppercase;
+    }
+    svg {
+      fill: #fff;
+      width: 22px;
+      margin-left: 5px;
+      transition: 0.25s ease;
+    }
+
+    &:hover {
+      background: #0f282f;
+      svg {
+        transform: translateX(3px);
+      }
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      margin-top: 10px;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  &.themeDark {
+    .learn-more-button {
+      background-color: #0f85a7;
+      border-color: #0f85a7;
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
+
+  &.themeGreen {
+    color: #fff;
+
+    .learn-more-button {
+      transition: 0.25s ease;
+      background-color: #143C48;
+      border-color: #143C48;
+      &:hover {
+        opacity: .8;
+      }
+    }
+
+  }
+  &.themeTurquoise {
+    background: #0f85a7;
+    color: $color-yellow;
+
+    .learn-more-button {
+      transition: 0.25s ease;
+      background-color: #1c4d5a;
+      border-color: #1c4d5a;
+      &:hover {
+        opacity: .8;
+      }
+    }
+
+  }
+
+  @media(max-width: 720px) {
+    .container {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+}

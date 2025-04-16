@@ -1,0 +1,36 @@
+$breakpoint-mobile-horizontal: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-tablet-horizontal: 1024px;
+$breakpoint-desktop: 1280px;
+$breakpoint-desktop-wide: 1440px;
+
+$container-max-width: 1440px;
+$container-padding-desktop: 60px;
+$container-padding-tablet: 40px;
+$container-padding-mobile: 15px;
+$content-max-width: 720px;
+$component-spacing-desktop: 120px;
+$component-spacing-tablet: 80px;
+$component-spacing-mobile: 40px;
+$gutter-width: 24px;
+
+$color-brand: #143c48;
+$color-brand-darker: #0C1B1F;
+$color-accent: #9e4749;
+$color-accent-darker: #6A2E30;
+$color-yellow: #fcf5e1;
+$color-background: #FFFEFA;
+$color-contrast: #414751;
+$color-text: $color-contrast;
+$color-headline: #143C48;
+$color-border: #d8d8d8;
+$color-green: #57693C;
+
+$color-teal: #5EC3D8;
+
+$color-background-light: #FFFEFA;
+$color-background-dark: #143C48;
+$color-background-hero: $color-brand;
+
+$heading-selectors: 'h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6';
+$input-selectors: '[type="tel"], [type="url"], [type="text"], [type="date"], [type="email"], [type="search"], [type="number"], [type="password"], textarea, select';

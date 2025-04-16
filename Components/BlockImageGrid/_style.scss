@@ -1,0 +1,262 @@
+[is="flynt-block-image-grid"] {
+  padding: 100px 0;
+  overflow: hidden;
+
+  .topo-lines {
+    pointer-events: none;
+    position: absolute;
+    width: 800px;
+
+    &.blue-lines {
+      top: -100px;
+      right: -200px;
+      transform: rotate(-160deg);
+    }
+    &.clay-lines {
+      bottom: -200px;
+      left: -200px;
+      transform: rotate(17deg);
+    }
+  }
+  &.flyntComponent--sizeSmall {
+    .figure {
+      max-width: 375px;
+    }
+  }
+
+  &.flyntComponent--sizeMedium {
+    .figure {
+      max-width: $content-max-width;
+    }
+  }
+
+  &.flyntComponent--sizeLarge {
+    .figure {
+      max-width: 800px;
+    }
+  }
+
+  &.flyntComponent--sizeFull {
+    .figure-caption {
+      margin-left: 0.625rem;
+    }
+  }
+
+  .backgroundImageContainer {
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    flex-direction: column;
+
+    h1,
+    p {
+      color: #fff;
+      position: relative;
+      z-index: 2;
+    }
+
+    .gradientOverlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.5);
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 0%,
+        transparent 100%
+      );
+    }
+  }
+
+  &.themeDark {
+    h1,
+    p {
+      color: #163c47;
+    }
+    .gradientOverlay {
+      display: none;
+    }
+  }
+
+  .contentMaxWidth {
+    max-width: 600px;
+    &.content--textRight {
+      text-align: right;
+      margin-left: auto;
+      margin-right: 0;
+    }
+    &.content--textLeft {
+      text-align: left;
+      margin-right: auto;
+      margin-left: 0;
+    }
+    &.content--textCenter {
+      text-align: center;
+      margin: auto;
+      max-width: none;
+    }
+  }
+
+  .imageGrid {
+    margin-top: 50px;
+  }
+
+  .learn-more-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    span {
+      margin-right: 12px;
+    }
+    svg {
+      transition: 0.3s ease;
+    }
+  }
+
+  .button-square {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    transition: 0.25s ease;
+
+    h3 {
+      color: #fff;
+      font-size: 30px;
+      font-weight: 400;
+    }
+
+    &.red-button {
+      background: $color-accent;
+    }
+
+    &.blue-button {
+      background: $color-brand;
+    }
+
+    &:hover {
+      &.red-button {
+        background: $color-accent-darker;
+      }
+
+      &.blue-button {
+        background: $color-brand-darker;
+      }
+      .learn-more-button {
+        svg {
+          transform: translateX(5px);
+        }
+      }
+    }
+
+
+    &.button-square-1 {
+      width: 330px;
+      padding: 40px;
+      padding-right: 75px;
+      padding-bottom: 50px;
+    }
+
+    &.button-square-2 {
+      width: 70%;
+      padding-right: 75px;
+    }
+  }
+
+  .image-grid-square {
+    border-radius: 5px;
+    overflow: hidden;
+    height: 500px;
+    position: relative;
+    width: 400px;
+    margin-bottom: 20px;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }
+
+    &.square--1 {
+      width: 100%;
+    }
+
+    &.square--2 {
+      width: 100%;
+      height: 260px;
+    }
+    &.square--3 {
+      width: 70%;
+      height: 400px;
+    }
+  }
+
+  [class^="rock-in"] {
+    opacity: 0;
+    transform: translateY(5px);
+    transition: 0.4s ease;
+  }
+
+  &.rocked {
+    [class^="rock-in-1"] {
+      opacity: 1;
+      transform: translateY(0px);
+      transition-delay: 0s;
+    }
+    [class^="rock-in-2"] {
+      opacity: 1;
+      transform: translateY(0px);
+      transition-delay: .1s;
+    }
+    [class^="rock-in-3"] {
+      opacity: 1;
+      transform: translateY(0px);
+      transition-delay: .2s;
+    }
+
+    [class^="rock-in-4"] {
+      opacity: 1;
+      transform: translateY(0px);
+      transition-delay: .3s;
+    }
+    [class^="rock-in-5"] {
+      opacity: 1;
+      transform: translateY(0px);
+      transition-delay: .4s;
+    }
+
+  }
+
+  @media (max-width: $breakpoint-tablet-horizontal) {
+    .image-grid-square {
+      height: 200px;
+      &.square--2, &.square--3 {
+        height: 200px;
+        width: 100%;
+      }
+    }
+    .button-square {
+      &.button-square-1, &.button-square-2 {
+        width: 100%;
+      }
+    }
+    .imageGrid {
+      text-align: center;
+
+    }
+    .learn-more-button {
+      justify-content: center;
+    }
+  }
+
+}

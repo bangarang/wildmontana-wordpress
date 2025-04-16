@@ -1,0 +1,38 @@
+.searchList {
+  @include reset-list;
+  border-radius: 4px;
+  margin-top: 20px;
+
+  &-item {
+    border-bottom: 1px solid #ececec;
+    position: relative;
+    padding: 30px 0;
+
+    &:last-child {
+      border: 0;
+    }
+  }
+}
+
+.post {
+  @include reset-content-margins;
+  h2 {
+    margin-bottom: 0;
+  }
+  &-footer {
+    text-align: right;
+  }
+}
+
+.noResults {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.meta {
+  font-size: 15px;
+  margin-bottom: 14px;
+  .meta-category {
+    text-decoration: none
+  }
+}

@@ -1,0 +1,28 @@
+{% if posts|length > 0 %}
+  <ul class="searchList themeReset">
+    {% for post in posts  %}
+      <li class="searchList-item boxPadding">
+        <article class="post">
+          <h2 class="h3"><a href="{{ post.link }}">{{ post.title }}</a></h2>
+          <div class="meta">
+            {% if post.category %}
+              <a class="meta-category bold" href="{{ post.category.link|e('esc_url') }}"><span class="visuallyHidden">{{ __("Category:", "flynt") }}</span> {{ post.category }}</a>
+              <span class="divider">|</span>
+            {% endif %}
+            {% if post.date %}
+              <time class="meta-date" datetime="{{ post.post_date }}">{{ post.date|date }}</time>
+            {% endif %}
+          </div>
+          <p>{{ post.preview.length(40).read_more(false) }}</p>
+          <footer class="post-footer">
+            <a href="{{ post.link }}" class="button button--link" aria-hidden="true" tabindex="-1">{{ labels.readMore }}</a>
+          </footer>
+        </article>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <div class="noResults boxPadding">
+    <p>{{ labels.noResults }}</p>
+  </div>
+{% endif %}

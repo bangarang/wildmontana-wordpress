@@ -1,0 +1,27 @@
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -8px 32px;
+
+  &-item {
+    padding: 0 8px 15px;
+  }
+}
+
+h1 {
+  @media(min-width: 680px){
+    font-size: 66px;
+  }
+  margin-bottom: 0;
+}
+
+.archive-select {
+  border: 1px solid #707070;
+  margin-bottom: -40px;
+  width: 400px;
+  max-width: 100%;
+  border-radius: 2px;
+  padding: 6px 20px;
+  min-height: unset;
+  margin-left: 20px;
+}

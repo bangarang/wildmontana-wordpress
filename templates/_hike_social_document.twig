@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html class="html {{ body_class }}" lang="{{ site.language }}">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-K3R9H9X');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--  Essential META Tags -->
+    <meta property="og:title" content="{{ trail.title }}">
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="{{ trail.trail_image }}">
+    {# <meta property="og:url" content="http://wildmontana.org/hike"> #}
+
+    <!--  Non-Essential, But Recommended -->
+    <meta property="og:description" content="{{ trail.description_text }}">
+    <meta property="og:site_name" content="Wild Montana">
+
+    <!--  Non-Essential, But Required for Analytics -->
+    {# <meta property="fb:app_id" content="your_app_id" />
+    <meta name="twitter:site" content="@website-username"> #}
+
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }} {{ __('Feed', 'flynt') }}" href="{{ site.rss2 | e('esc_url') }}">
+    {{ function('wp_head') }}
+    <link rel="preload" href="/wp-content/themes/wild-montana-flynt/hike/dist/manifest.7c1aed341d3056f94fb8.js" as="script">
+    <link rel="preload" href="/wp-content/themes/wild-montana-flynt/hike/dist/vendor.61af93e58a98bc804c2c.js" as="script">
+    <link rel="preload" href="/wp-content/themes/wild-montana-flynt/hike/dist/app.e5d208522b0417f79359.js" as="script">
+    <link rel="preload" href="/wp-content/themes/wild-montana-flynt/hike/dist/common.e5d208522b0417f79359.css" as="style">
+    <link rel="preload" href="/wp-content/themes/wild-montana-flynt/hike/dist/0.c70985fc1a9bb03cd867.js" as="script">
+    <link rel="prefetch" href="/wp-content/themes/wild-montana-flynt/hike/dist/1.0e00d8d53b72e48bfb83.js">
+    <link rel="stylesheet" href="/wp-content/themes/wild-montana-flynt/hike/dist/common.e5d208522b0417f79359.css">
+    <link rel="stylesheet" href="/wp-content/themes/wild-montana-flynt/hike/dist/hike.1.css">
+  </head>
+  <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3R9H9X"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+    <a href="#mainContent" class="skipLink">
+      {{ __("Skip to main content", "flynt") }}
+    </a>
+    {% block layout %}
+      <div class="pageWrapper">
+        <header class="mainHeader">
+          {% block header %}
+            {{ renderComponent('NavigationMain') }}
+            {{ renderComponent('NavigationBurger') }}
+          {% endblock %}
+        </header>
+        <main id="mainContent" class="mainContent" aria-label="{{ __('Content', 'flynt') }}">
+          {% if function('post_password_required') %}
+            {{ function('get_the_password_form') }}
+          {% else %}
+            {% block content %}
+              No <code>{{ '{% block content %}' }}</code> defined for this template.
+            {% endblock %}
+          {% endif %}
+        </main>
+        <footer class="mainFooter">
+          {% block footer %}
+            {{ renderComponent('NavigationFooter') }}
+          {% endblock %}
+        </footer>
+      </div>
+    {% endblock %}
+    <div class="wpFooter">
+      {{ function('wp_footer') }}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+[is="flynt-block-post-header"] {
+  .meta {
+    font-size: 14px;
+  }
+
+  .excerpt {
+    color: $color-text;
+    font-weight: normal;
+  }
+
+  .featuredImage {
+    margin: 2.5rem 0;
+  }
+
+  h1 {
+    margin-top: 4rem;
+    @media (min-width: $breakpoint-mobile-horizontal) {
+      font-size: 3.5rem;
+    }
+  }
+
+  .meta {
+    padding: 4rem 0 2em;
+    color: #454545;
+    position: relative;
+    margin-bottom: 2rem;
+
+    .meta-category {
+      color: #454545;
+      transition: 0.25s ease;
+      font-weight: 600;
+      text-decoration: none;
+      &:hover {
+        color: $color-accent;
+        text-decoration: none;
+      }
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 1px;
+      width: 100px;
+      background: #454545;
+      bottom: 0;
+    }
+  }
+
+  .backgroundImageContainer {
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    flex-direction: column;
+
+    .container {
+      position: relative;
+    }
+
+    h1,
+    h5,
+    p {
+      color: #fff;
+      position: relative;
+      z-index: 2;
+    }
+
+    .gradientOverlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.5);
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 0%,
+        transparent 100%
+      );
+    }
+
+    // EitherFuseHelmetLimply
+    img {
+      object-fit: cover;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      border-radius: 0;
+    }
+  }
+
+  .solid_color_background {
+    background: #57693c;
+    .transparent_logo_background {
+      position: absolute;
+      right: 0;
+      height: 100%;
+      top: 0;
+      width: unset;
+      object-fit: unset;
+    }
+  }
+
+  .imported_post_banner {
+    background: #0f85a7;
+    color: #FFFEFA;
+    padding: 20px;
+    .row {
+      align-items: center;
+      justify-content: space-between;
+    }
+    p {
+      margin: 0;
+    }
+  }
+
+  .learn-more-button {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 9px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #143c48;
+    transition: 0.25s ease;
+
+    span {
+      text-transform: uppercase;
+    }
+    svg {
+      fill: #fff;
+      width: 22px;
+      margin-left: 5px;
+      transition: 0.25s ease;
+    }
+
+    &:hover {
+      background: #0f282f;
+      svg {
+        transform: translateX(3px);
+      }
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      margin-top: 10px;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  .mobile_photographer_caption {
+    color: #fff;
+    position: relative;
+    text-align: left;
+    width: 100%;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}

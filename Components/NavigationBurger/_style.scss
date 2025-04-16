@@ -1,0 +1,52 @@
+// NOTE: overwriting wp defaults
+@media screen and (max-width: 600px) {
+  // stylelint-disable-next-line selector-max-id
+  #wpadminbar {
+    position: fixed;
+  }
+}
+
+[is='flynt-navigation-burger'] {
+  $navigation-height: 75px;
+  z-index: 103;
+  height: $navigation-height;
+
+  @media (min-width: $breakpoint-tablet-horizontal) {
+    display: none;
+  }
+
+  .container {
+    align-items: center;
+    background-color: $color-background;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+    display: flex;
+    height: $navigation-height;
+    justify-content: space-between;
+    left: 0;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 104;
+    transition: 0.25s ease-in-out;
+    .admin-bar & {
+      top: 46px;
+
+      @media (min-width: 783px) {
+        top: 32px;
+      }
+    }
+  }
+  &.flyntComponent-menuIsOpen {
+    .container {
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+
+  @import 'Partials/logo';
+  @import 'Partials/hamburger';
+  @import 'Partials/menu';
+}

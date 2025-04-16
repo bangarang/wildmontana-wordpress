@@ -1,0 +1,73 @@
+<div class="flyntComponent componentSpacing {{ options.theme }}" is="flynt-block-wysiwyg">
+  <div class="container {{ options.size }} {{ options.containerAlignment }}">
+    <div class="content content--{{ textAlignment }}">
+      {{ contentHtml|e('wp_kses_post') }}
+    </div>
+    {% if (options.social_icons) %}
+    <div class="social-icons">
+        <a class="super-sub-menu-link menu-item menu-item-type-custom menu-item-object-custom menu-item-7576"
+          href="https://twitter.com/wildmontana" target="_blank">
+          <svg id="Twitter" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+            <rect id="Rectangle_1457" data-name="Rectangle 1457" width="20" height="20" fill="none"></rect>
+            <path id="Path_2" data-name="Path 2"
+              d="M43.962,17.27A10.884,10.884,0,0,0,54.944,6.288V5.765a8.5,8.5,0,0,0,1.883-1.987,8.682,8.682,0,0,1-2.2.628A4.069,4.069,0,0,0,56.3,2.314a9.593,9.593,0,0,1-2.406.941A3.735,3.735,0,0,0,51.074,2,3.93,3.93,0,0,0,47.2,5.87a2.039,2.039,0,0,0,.1.837A10.813,10.813,0,0,1,39.36,2.628a4.005,4.005,0,0,0-.523,1.987A4.155,4.155,0,0,0,40.51,7.857a3.526,3.526,0,0,1-1.778-.523h0A3.822,3.822,0,0,0,41.87,11.1a3.224,3.224,0,0,1-1.046.1,1.78,1.78,0,0,1-.732-.1,3.962,3.962,0,0,0,3.661,2.719,7.9,7.9,0,0,1-4.811,1.673,2.9,2.9,0,0,1-.941-.1,9.872,9.872,0,0,0,5.962,1.883"
+              transform="translate(-38)" fill="#143c48" fill-rule="evenodd"></path>
+          </svg>
+        </a>
+        <a class="super-sub-menu-link menu-item menu-item-type-custom menu-item-object-custom menu-item-7572"
+          href="https://www.facebook.com/wildmontana/" target="_blank">
+          <svg id="FB_Logo" data-name="FB Logo" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" width="10.227" height="19.696" viewBox="0 0 10.227 19.696">
+            <defs>
+              <clipPath id="clip-path">
+                <path id="Path_44" data-name="Path 44" d="M0,13.121H10.227v-19.7H0Z" transform="translate(0 6.575)"
+                  fill="#143c48"></path>
+              </clipPath>
+            </defs>
+            <g id="Group_13" data-name="Group 13" clip-path="url(#clip-path)">
+              <g id="Group_12" data-name="Group 12" transform="translate(0.001 0)">
+                <path id="Path_43" data-name="Path 43"
+                  d="M4.422,13.121V4.137H7.439l.449-3.5H4.422V-1.6c0-1.016.282-1.7,1.734-1.7H8.011V-6.437a24.98,24.98,0,0,0-2.7-.138c-2.672,0-4.5,1.633-4.5,4.628V.635H-2.216v3.5H.807v8.984Z"
+                  transform="translate(2.216 6.575)" fill="#143c48"></path>
+              </g>
+            </g>
+          </svg>
+        </a>
+        <a class="super-sub-menu-link menu-item menu-item-type-custom menu-item-object-custom menu-item-7573"
+          href="https://www.instagram.com/wildmontana/" target="_blank">
+          <svg id="Insta_Logo" data-name="Insta Logo" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" width="20.122" height="20.679" viewBox="0 0 20.122 20.679">
+            <g id="Group_18" data-name="Group 18">
+              <g id="Group_15" data-name="Group 15" transform="translate(-0.001)">
+                <path id="Path_45" data-name="Path 45"
+                  d="M9.7,14.1H1.386A5.915,5.915,0,0,1-4.52,8.2V-.669A5.915,5.915,0,0,1,1.386-6.575H9.7A5.913,5.913,0,0,1,15.6-.669V8.2A5.913,5.913,0,0,1,9.7,14.1M1.386-5.059A4.395,4.395,0,0,0-3-.669V8.2a4.395,4.395,0,0,0,4.391,4.391H9.7A4.4,4.4,0,0,0,14.09,8.2V-.669A4.4,4.4,0,0,0,9.7-5.059Z"
+                  transform="translate(4.52 6.575)" fill="#143c48"></path>
+              </g>
+              <g id="Group_16" data-name="Group 16" transform="translate(4.566 4.816)">
+                <path id="Path_46" data-name="Path 46"
+                  d="M3.747,7.495A5.5,5.5,0,0,1-1.747,2,5.573,5.573,0,0,1-.061-1.985,5.233,5.233,0,0,1,3.776-3.491a5.678,5.678,0,0,1,4.1,1.667A5.317,5.317,0,0,1,9.242,2.022,5.619,5.619,0,0,1,7.613,5.881,5.4,5.4,0,0,1,3.747,7.495m-.126-9.14a3.418,3.418,0,0,0-2.393.988A3.719,3.719,0,0,0,.105,2,3.644,3.644,0,0,0,3.747,5.642,3.668,3.668,0,0,0,7.39,1.981,3.5,3.5,0,0,0,6.528-.56,3.887,3.887,0,0,0,3.719-1.642c-.031,0-.066,0-.1,0"
+                  transform="translate(1.747 3.494)" fill="#143c48"></path>
+              </g>
+              <g id="Group_17" data-name="Group 17" transform="translate(14.405 3.382)">
+                <path id="Path_47" data-name="Path 47"
+                  d="M1.748.873A1.282,1.282,0,1,1,.468-.407,1.279,1.279,0,0,1,1.748.873"
+                  transform="translate(0.815 0.407)" fill="#143c48"></path>
+              </g>
+            </g>
+          </svg>
+        </a>
+        <a class="super-sub-menu-link menu-item menu-item-type-custom menu-item-object-custom menu-item-7575"
+          href="https://www.youtube.com/c/wildmontana" target="_blank">
+          <svg id="YouTube_Logo" data-name="YouTube Logo" xmlns="http://www.w3.org/2000/svg" width="27.298"
+            height="19.232" viewBox="0 0 27.298 19.232">
+            <path id="Path_49" data-name="Path 49"
+              d="M34.727,37a3.43,3.43,0,0,0-2.413-2.429C30.185,34,21.649,34,21.649,34s-8.536,0-10.665.574A3.43,3.43,0,0,0,8.57,37,35.978,35.978,0,0,0,8,43.616a35.978,35.978,0,0,0,.57,6.613,3.43,3.43,0,0,0,2.413,2.429c2.129.574,10.665.574,10.665.574s8.536,0,10.665-.574a3.43,3.43,0,0,0,2.413-2.429,35.978,35.978,0,0,0,.57-6.613A35.978,35.978,0,0,0,34.727,37Z"
+              transform="translate(-8 -34)" fill="#143c48"></path>
+            <path id="Path_50" data-name="Path 50" d="M78,77.949l7.135-4.059L78,69.831Z"
+              transform="translate(-67.143 -64.274)" fill="#fffefa"></path>
+          </svg>
+        </a>
+    </div>
+    {% endif %}
+  </div>
+</div>

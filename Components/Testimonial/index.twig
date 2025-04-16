@@ -1,0 +1,100 @@
+<div class="flyntComponent {{ options.theme }}" is="flynt-testimonial">
+  <div class="container {{textAlignment}}">
+    {%  if options.slider %}
+        <div class="posts--slider" data-count="{{ options.columns }}">
+        <div data-slider class="slider swiper-container">
+          <div class="swiper-wrapper">
+            {% for item in items %}
+            <div class="slider-item swiper-slide post-slider-item">
+              <div class="content">
+                <div class="slider-panel">
+                  <div class="slider-panel-inner boxPadding">
+
+                  {% if item.image %}
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="testimonial-image">
+                          <img src="{{ Image(item.image).src }}"  alt="" />
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="quoteIcon topQuote">“</div>
+                        {% if item.contentHtml %}
+                          <div class="content">
+                            {{ item.contentHtml|e('wp_kses_post') }}
+                          </div>
+                        {% endif %}
+                        {% if item.byline %}
+                          <p class="byline">{{ item.byline }}</p>
+                        {% endif %}
+                        <div class="quoteIcon bottomQuote">”</div>
+                      </div>
+                    </div>
+                  {% else %}
+
+                <div class="quoteIcon topQuote">“</div>
+                {% if item.contentHtml %}
+                  <div class="content">
+                    {{ item.contentHtml|e('wp_kses_post') }}
+                  </div>
+                {% endif %}
+                {% if item.byline %}
+                  <p class="byline">{{ item.byline }}</p>
+                {% endif %}
+                <div class="quoteIcon bottomQuote">”</div>
+              {% endif %}
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            {% endfor %}
+
+          </div>
+          <button type="button" data-slider-button="prev" class="slider-button slider-button--prev">
+            <i data-feather="arrow-left"></i>
+          </button>
+          <button type="button" data-slider-button="next" class="slider-button slider-button--next">
+            <i data-feather="arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    {%  else  %}
+      {% for item in items %}
+        {% if item.image %}
+          <div class="row">
+            <div class="col-md-4">
+              <div class="testimonial-image">
+                <img src="{{ Image(item.image).src }}"  alt="" />
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="quoteIcon topQuote">“</div>
+              {% if item.contentHtml %}
+                <div class="content">
+                  {{ item.contentHtml|e('wp_kses_post') }}
+                </div>
+              {% endif %}
+              {% if item.byline %}
+                <p class="byline">{{ item.byline }}</p>
+              {% endif %}
+              <div class="quoteIcon bottomQuote">”</div>
+            </div>
+          </div>
+        {% else %}
+
+        <div class="quoteIcon topQuote">“</div>
+        {% if item.contentHtml %}
+            <div class="content">
+              {{ item.contentHtml|e('wp_kses_post') }}
+            </div>
+        {% endif %}
+        {% if item.byline %}
+          <p class="byline">{{ item.byline }}</p>
+        {% endif %}
+        <div class="quoteIcon bottomQuote">”</div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="flyntComponent pdf-download componentSpacing {{ options.theme }}" is="flynt-pdf-download">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="image-wrapper">
+        {% set gif = image.post_mime_type == 'image/gif' %}
+          <img class="figure-image {{ not gif ? 'lazyload' }}"
+             src="{{ not gif ? image.src|resizeDynamic(800) : image.src }}"
+          {% if not gif %}
+            srcset="{{ placeholderImage(800, 800 / image.aspect) }}"
+            data-srcset="
+            {{ image.src|resizeDynamic(1920) }} 1920w,
+            {{ image.src|resizeDynamic(1440) }} 1440w,
+            {{ image.src|resizeDynamic(1320) }} 1320w,
+            {{ image.src|resizeDynamic(1024) }} 1024w,
+            {{ image.src|resizeDynamic(800) }} 800w,
+            {{ image.src|resizeDynamic(600) }} 600w,
+            {{ image.src|resizeDynamic(375) }} 375w"
+            data-sizes="auto"
+          {% endif %}
+             alt="{{ image.alt|e }}">
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="content-wrapper">
+          <div class="content--{{textAlignment}}">
+            {% if headline %}<h3>{{ headline }}</h3>{% endif %}
+            <div class="preContent {{textAlignment}}">
+              {{ content|e('wp_kses_post') }}
+            </div>
+            <a class="download-arrow" href="{{ pdf_image.url }}">
+              <svg xmlns="http://www.w3.org/2000/svg" width="45.743" height="45.743" viewBox="0 0 45.743 45.743">
+                <path id="Path_19098" data-name="Path 19098" d="M35.371,12.5A22.871,22.871,0,1,0,58.243,35.371,22.871,22.871,0,0,0,35.371,12.5Zm-9.53,20.7a.953.953,0,0,1,.877-.59h3.392v-9.53a.953.953,0,0,1,.953-.953h8.711a.953.953,0,0,1,.953.953v9.53H44.12a.953.953,0,0,1,.667,1.62l-4.327,4.327h0L36.039,43a.956.956,0,0,1-.667.286h0A.954.954,0,0,1,34.685,43l-4.327-4.383h0l-4.346-4.346A.955.955,0,0,1,25.842,33.2ZM45.035,47.57a.953.953,0,0,1-.953.953H26.661a.953.953,0,0,1-.953-.953V45.664a.953.953,0,0,1,.953-.953h17.4a.953.953,0,0,1,.953.953V47.57Z" transform="translate(-12.5 -12.5)" fill="#ffa400"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

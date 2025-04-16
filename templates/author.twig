@@ -1,0 +1,8 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  {{ renderComponent('AuthorArchive', { posts: posts }) }}
+  <section>
+    {{ renderComponent('BlockForm', {'contentHtml': '<h2>' ~ __('Stay Connected') ~ '</h2>','gravity_form_id': 1, 'options': {'theme': 'themeYellow', 'columns': 1}}) }}
+  </section>
+{% endblock %}
